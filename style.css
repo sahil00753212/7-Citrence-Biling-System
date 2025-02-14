@@ -2,18 +2,19 @@
 .bod {
     display: flex;
     justify-content: space-between;
-    padding: 40px;
-    border: 2px solid #cab22d; /* Fixing typo 'px' to '2px' */
+    padding: 30px;
+    border: 2px solid rgb(29, 29, 29); /* Fixing typo 'px' to '2px' */
     font-family: Arial, Helvetica, sans-serif;
-    margin: 2%;
+    margin: 1%;
     font-weight: bold;
-    color: #cab22d;
-    background-color: black;
-    transition: all 0.3s ease; /* Smooth transition for layout changes */
+    color:rgb(24, 24, 24);
+   
+    /* transition: all 0.3s ease; Smooth transition for layout changes */
 }
 
-.CON {
-    margin-top: 2%;
+.CON  i{
+    margin: 10px;
+
     font-size: 20px;
     opacity: 0;
     animation: fadeIn 1s ease-out forwards 0.5s; /* Animation */
@@ -193,4 +194,30 @@ option {
 }
 .table-wrapper {
     overflow-x: scroll;
+}
+
+.Signiture{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-left: auto;
+}
+
+.Signiture img {
+    width: 324px;
+
+}
+
+.container::after{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url(SADDAM2.jpeg) no-repeat center;
+background-attachment: fixed;
+pointer-events: none;
+opacity: 1;
 }

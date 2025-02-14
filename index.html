@@ -10,70 +10,92 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
-        @media print {
-            .bod, .backk, .CON {
-                background-color: black !important;
-                -webkit-print-color-adjust: exact; /* For WebKit browsers */
-                print-color-adjust: exact; /* For other browsers */
-            }
-            /* Hide other elements that shouldn't be printed */
-            .Add, .btn { display: none; }
+   @media print {
+
     
-            /* Hide table borders */
-            table, th, td {
-                border: none !important; /* Ensure no borders are shown */
-            }
+    .Add, .btn { display: none; }
+
+
+    table, th, td {
+        border: none !important; 
+    }
+
     
-            /* Hide input borders */
-            tbody input {
-                border: none !important; 
-                background: none !important; 
-                box-shadow: none !important; 
-                font-size: 25px; /* Adjust font size here */
-            }
+    tbody input {
+        border: 0;
+    }
+
     
-            th {
-                background: none !important; 
-                font-size: 18px;
-            }
-            
-            table {
-                font-size: 25px; /* Adjust font size for table cells */
-            }
-            
-            .action { display: none; }
-            h2, h3, p { 
-                font-size: 25px; /* Adjust font size for headings and paragraphs */
-            }
-        }
+    tbody td {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    th {
+        background: none !important;
+        font-size: 18px;
+    }
+
+    table {
+        font-size: 25px; 
+    }
+
+    .action { display: none; }
+    h2, h3, p { 
+        font-size: 25px;
+    }
+
+    
+    tbody td {
+        font-weight: bold;
+        padding: 10px; 
+    }
+
+    .form-control  {
+        /* border: none; */
+        border-bottom: 1px solid #dedede;
+    }
+
+    .mt{
+       page-break-inside: avoid;
+    }
+.cancle{
+    display: none;
+}
+
+}
+
+
     </style>
     
     
 </head>
-<body>    <div class="main">
+<body>   
+   
+     <div class="main">
         <div class="backk">
             <div class="bod">
                 <div class="CON">
-                    <i class="fa-solid fa-phone"></i> <label for="phone1">+91 8806 8806 17</label><br><br>
-                    <i class="fa-solid fa-phone"></i> <label for="phone2">+91 9923 1514 69</label><br><br>
-                    <i class="fa-solid fa-envelope"></i> <label for="email">7citrineinterior@gmail.com</label><br><br>
+                    <i class="fa-solid fa-phone"></i> <label for="phone1">+91 8806 8806 17</label><br>
+                    <i class="fa-solid fa-phone"></i> <label for="phone2">+91 9923 1514 69</label><br>
+                    <i class="fa-solid fa-envelope"></i> <label for="email">7citrineinterior@gmail.com</label><br>
                     <i class="fa-solid fa-location-dot"></i> <label for="address">OPP.SHOBHA CARNATION H&M ROYAL LANE,<br> TALAB KONDWHA,PUNE-48</label>
                 </div>
-                <img src="WhatsApp Image 2024-09-23 at 9.42.52 PM.jpeg" alt="Company Image">
+                
             </div>
         </div>
 
         <div class="card">
             <div class="card-header">
-                <h2>
+                <h2 class="Select">
                     <select class="form-select" id="invoice-type">
-                        <option value="Estimate">ESTIMATE</option>
+                        <option value="Estimate">Estimate</option>
                         <option value="Invoice">Invoice</option>
                     </select>
                 </h2>
             </div>
 
-            <!-- Bill Details -->
+          
             <div class="row mt-3">
                 <div class="col-md-6">
                     <label for="bill">BILL NUMBER:</label>
@@ -92,34 +114,33 @@
                 </div>
             </div>
 
-            <!-- Invoice Table -->
+          
             <div class="card">
                 <div class="card-body">
-                    <div class="table-wrapper">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">SR.NO</th>
-                                    <th scope="col">Item Name</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Rate</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody id="Tbodyy">
-                                <tr id="Trow" class="d-none">
-                                    <th scope="row"></th>
-                                    <td><input type="text" class="form-control min-w"></td>
-                                    <td><input type="number" class="form-control min-w" name="Quantity" min="0" onchange="Cal(this)"></td>
-                                    <td><input type="number" class="form-control min-w" name="Rate" min="0" onchange="Cal(this)"></td>
-                                    <td><input type="number" class="form-control min-w" name="Amount" readonly></td>
-                                    <td><button type="button" class="btn btn-danger" onclick="btndel(this)">X</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- Total, Advance, Balance -->
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">SR.NO</th>
+                                <th scope="col">Item Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Rate</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Tbodyy">
+                            <tr id="Trow" class="d-none">
+                                <th scope="row"></th>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="number" class="form-control" name="Quantity" min="0" onchange="Cal(this)"></td>
+                                <td><input type="number" class="form-control" name="Rate" min="0" onchange="Cal(this)"></td>
+                                <td><input type="number" class="form-control" name="Amount" readonly></td>
+                                <td><button type="button" class="btn btn-danger  cancle" onclick="btndel(this)">X</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
                     <div class="row">
                         <div class="col-md-4">
                             <div class="input-group mb-3">
@@ -145,9 +166,9 @@
                     <button class="btn btn-secondary" onclick="GetPrint()">Print</button>
                 </div>
             </div>
-
-            <!-- Terms and Conditions -->
-            <div class="mt">
+        </div>
+           
+            <div class="mt tnc">
                 <h3>Terms & Conditions:</h3>
                 <p id="text">
                     1. Advance payment of 50% should be paid as work is confirmed.<br>
@@ -162,9 +183,12 @@
             <div class="text">
                 <h3>Thank you for doing business with us</h3>
             </div>
+            <div class="Signiture">
+                <img class="Signitures" src="SADDAM2.jpeg">
             <h3 id="text3">7 Citrine Interior</h3>
-
-            <script>
+         </div>
+         </div>
+     <script>
                 (function() {
                     function GetPrint() {
                         window.print();
@@ -172,20 +196,20 @@
             
                     function btnadd() {
                         var v = $("#Trow").clone().removeClass("d-none").appendTo("#Tbodyy");
-                        $(v).find("input").val(''); // Clear input values
-                        updateSerialNumbers(); // Update serial numbers for all rows
-                        GetTotal(); // Recalculate total
+                        $(v).find("input").val(''); 
+                        updateSerialNumbers();
+                        GetTotal(); 
                     }
             
                     function btndel(v) {
                         $(v).closest('tr').remove();
                         GetTotal();
-                        updateSerialNumbers(); // Update serial numbers after deletion
+                        updateSerialNumbers();
                     }
             
                     function updateSerialNumbers() {
                         $('#Tbodyy tr').each(function(index) {
-                            $(this).find('th').first().text(index + 0); // Serial number starts from 1
+                            $(this).find('th').first().text(index + 0); 
                         });
                     }
             
@@ -206,7 +230,7 @@
                             sum += Amount;
                         }
                         document.getElementById("ftotal").value = sum.toFixed(2);
-                        GetBalance(); // Update balance when total changes
+                        GetBalance(); 
                     }
             
                     function GetBalance() {
@@ -216,7 +240,7 @@
                         document.getElementById("balance").value = balance.toFixed(2);
                     }
             
-                    // Expose functions globally
+                  
                     window.GetPrint = GetPrint;
                     window.btnadd = btnadd;
                     window.btndel = btndel;
@@ -239,5 +263,6 @@
             </script>
         </div>
     </div>
+
 </body>
 </html>
