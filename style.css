@@ -12,10 +12,6 @@
     transition: all 0.3s ease; /* Smooth transition for layout changes */
 }
 
-.bod:hover {
-    background-color: #333; /* Darkens background when hovering */
-}
-
 .CON {
     margin-top: 2%;
     font-size: 20px;
@@ -27,9 +23,6 @@
     width: 300px;
 }
 
-.bod img:hover {
-    transform: scale(1.05); /* Zoom effect on hover */
-}
 
 .col-md-6,
 .col-md-12 {
@@ -38,10 +31,6 @@
     transition: transform 0.3s ease; /* Smooth transition */
 }
 
-.col-md-6:hover,
-.col-md-12:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
 
 /* Make the select dropdown centered with larger text */
 .form-select {
@@ -49,10 +38,6 @@
     text-align: center;
     font-size: 20px;
     transition: background-color 0.3s ease;
-}
-
-.form-select:hover {
-    background-color: #cab22d;
 }
 
 .card {
@@ -200,4 +185,12 @@ option {
         font-size: 15px;
         padding: 8px 12px;
     }
+}
+
+
+.min-w {
+    min-width: 200px;
+}
+.table-wrapper {
+    overflow-x: scroll;
 }

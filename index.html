@@ -95,29 +95,30 @@
             <!-- Invoice Table -->
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">SR.NO</th>
-                                <th scope="col">Item Name</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Rate</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody id="Tbodyy">
-                            <tr id="Trow" class="d-none">
-                                <th scope="row"></th>
-                                <td><input type="text" class="form-control"></td>
-                                <td><input type="number" class="form-control" name="Quantity" min="0" onchange="Cal(this)"></td>
-                                <td><input type="number" class="form-control" name="Rate" min="0" onchange="Cal(this)"></td>
-                                <td><input type="number" class="form-control" name="Amount" readonly></td>
-                                <td><button type="button" class="btn btn-danger" onclick="btndel(this)">X</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                    <div class="table-wrapper">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">SR.NO</th>
+                                    <th scope="col">Item Name</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Rate</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="Tbodyy">
+                                <tr id="Trow" class="d-none">
+                                    <th scope="row"></th>
+                                    <td><input type="text" class="form-control min-w"></td>
+                                    <td><input type="number" class="form-control min-w" name="Quantity" min="0" onchange="Cal(this)"></td>
+                                    <td><input type="number" class="form-control min-w" name="Rate" min="0" onchange="Cal(this)"></td>
+                                    <td><input type="number" class="form-control min-w" name="Amount" readonly></td>
+                                    <td><button type="button" class="btn btn-danger" onclick="btndel(this)">X</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <!-- Total, Advance, Balance -->
                     <div class="row">
                         <div class="col-md-4">
