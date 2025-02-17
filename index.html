@@ -216,13 +216,16 @@
         (function () {
             function GetPrint() {
                 const cells = document.querySelectorAll('.min-w');
+                const tw = document.querySelector('.table-wrapper')
                 cells.forEach(cell => {
                     cell.style.minWidth = 'auto'
                 });
+                tw.style.overflowX='auto';
                 window.print();
                 cells.forEach(cell => {
                     cell.style.minWidth = '200px'
                 });
+                tw.style.overflowX='auto';
 
             }
 
