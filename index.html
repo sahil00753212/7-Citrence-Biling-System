@@ -186,7 +186,8 @@
                     </div>
 
                     <button class="btn btn-primary" onclick="btnadd()">Add Item</button>
-                    <button class="btn btn-secondary" onclick="GetPrint()">Print</button>
+                    <button class="btn btn-success" onclick="GetPrint()">Print</button>
+                    <button class="btn btn-secondary" onclick="resetTable()">Reset Table Size</button>
                 </div>
             </div>
         </div>
@@ -220,14 +221,10 @@
                 cells.forEach(cell => {
                     cell.style.minWidth = 'auto'
                 });
-                tw.style.overflowX='auto';
+                tw.style.overflowX = 'auto';
                 window.print();
-                // cells.forEach(cell => {
-                //     cell.style.minWidth = '200px'
-                // });
-                // tw.style.overflowX='auto';
-
             }
+
 
             function btnadd() {
                 var v = $("#Trow").clone().removeClass("d-none").appendTo("#Tbodyy");
@@ -284,7 +281,14 @@
         })();
 
 
-
+        function resetTable() {
+            const cells = document.querySelectorAll('.min-w');
+            const tw = document.querySelector('.table-wrapper')
+            cells.forEach(cell => {
+                cell.style.minWidth = '200px'
+            });
+            tw.style.overflowX = 'auto';
+        }
 
 
         function GetPDF() {
