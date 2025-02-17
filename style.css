@@ -35,7 +35,7 @@
 
 /* Make the select dropdown centered with larger text */
 .form-select {
-    font-weight: bold;
+    font-weight: normal;
     text-align: center;
     font-size: 20px;
     transition: background-color 0.3s ease;
@@ -144,6 +144,7 @@ option {
     }
 
     tbody input {
+        line-height: 1;
         font-size: 16px;
     }
 
@@ -188,7 +189,9 @@ option {
     }
 }
 
-
+.d-none th{
+    font-weight: normal;
+}
 
 .min-w {
     min-width: 200px;
@@ -209,4 +212,6 @@ option {
     width: 324px;
 
 }
+
+
 
