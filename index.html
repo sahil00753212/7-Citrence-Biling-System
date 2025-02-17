@@ -97,7 +97,7 @@
                     <i class="fa-solid fa-location-dot"></i> <label for="address">OPP.SHOBHA CARNATION H&M ROYAL
                         LANE,<br> TALAB KONDWHA,PUNE-48</label>
                 </div>
-
+                <img src="Picsart_24-09-26_18-32-40-714-removebg-preview.png" alt="Company Image">
             </div>
         </div>
 
@@ -215,7 +215,15 @@
     <script>
         (function () {
             function GetPrint() {
+                const cells = document.querySelectorAll('.min-w');
+                cells.forEach(cell => {
+                    cell.style.minWidth = 'auto'
+                });
                 window.print();
+                cells.forEach(cell => {
+                    cell.style.minWidth = '200px'
+                });
+
             }
 
             function btnadd() {
