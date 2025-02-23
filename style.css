@@ -189,9 +189,7 @@ option {
     }
 }
 
-.d-none th{
-    font-weight: normal;
-}
+
 
 .min-w {
     min-width: 200px;
