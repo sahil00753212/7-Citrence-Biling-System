@@ -1,4 +1,4 @@
-/* Global Styles */
+
 .bod {
     display: flex;
     justify-content: space-between;
@@ -88,6 +88,7 @@ option {
 /* Mobile-Friendly Styles - Media Query */
 @media screen and (max-width: 768px) {
     .bod {
+      
         flex-direction: column;
         padding: 20px;
         transition: all 0.3s ease;
